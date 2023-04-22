@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneControl">
+   <children>
+      <Label layoutX="201.0" layoutY="77.0" text="Ain Shams Library">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="177.0" layoutY="202.0" text="Sign Up" />
+      <Label layoutX="379.0" layoutY="232.0" text="already have an account?" />
+      <Button layoutX="132.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToSignUpReader" text="Sign Up as a Reader" />
+      <Button layoutX="128.0" layoutY="302.0" mnemonicParsing="false" onAction="#switchToSignUpLibrarian" text="Sign up as a Librarian" />
+      <Button layoutX="427.0" layoutY="272.0" mnemonicParsing="false" onAction="#switchToLogin" text="Log in" />
+   </children>
+</AnchorPane>

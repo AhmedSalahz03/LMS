@@ -1,0 +1,11 @@
+
+
+Type: Reader
+Username: aaa
+Password: aaa
+First Name: aaa
+Last Name: aaa
+Address: aaa
+Email: aaa
+Cellphone: aaa
+IsBlocked: No
