@@ -1,21 +1,22 @@
 
 
 Type: Reader
-Username: aaa
-Password: aaa
-First Name: aaa
-Last Name: aaa
-Address: aaa
-Email: aaa
-Cellphone: aaa
-IsBlocked: No
+Username: aa
+Password: aa
+First Name: aa
+Last Name: aa
+Address: aa
+Email: aa
+Cellphone: aa
+IsBlocked: aa
+
 Type: Reader
-Username: aaaa
-Password: aaa
-First Name: aaa
-Last Name: aaa
-Address: aaa
-Email: aaa
-Cellphone: aaa
+Username: cc
+Password: cc
+First Name: cc
+Last Name: cc
+Address: cc
+Email: cc
+Cellphone: cc
 IsBlocked: No
 

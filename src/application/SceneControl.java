@@ -122,6 +122,9 @@ public class SceneControl {
 	    } catch (FileNotFoundException e) {
 	        e.printStackTrace();
 	    }
+	    
+	    // Checking if the username is already taken or not.
+	    
 	    try (Scanner scanner = new Scanner(new File("Librarians.txt"))) {
 	        scanner.nextLine(); // Skip empty line at the beginning of file
 	        while (scanner.hasNextLine()) {
@@ -162,6 +165,7 @@ public class SceneControl {
 	        alert.showAndWait();
 	    	
 	    }
+	    // Writing the data entered into the Readers.txt file.
 	    else {
 	        Person reader = new Person("Reader", username, password, firstName, lastName, address, cellphone, email, "No");
 
@@ -190,6 +194,8 @@ public class SceneControl {
 	    String cellphone = cellphoneTextFieldL.getText();
 	    
 	    boolean isMatch = false;
+	    
+	    // Checking if username is already taken or not.
 	    
 	    try (Scanner scanner = new Scanner(new File("Readers.txt"))) {
 	        scanner.nextLine(); // Skip empty line at the beginning of file
@@ -244,6 +250,9 @@ public class SceneControl {
 	        alert.setContentText("Please fill out all fields.");
 	        alert.showAndWait();
 	    }
+	    
+	    // A code that only librarians can know is maybe given by the employer to the employee to prevent readers to sign up as librarians.
+	    
 	    else if (!code.equals("3333")) {
 	    	Alert alert = new Alert(AlertType.ERROR);
 	        alert.setTitle("Error");
@@ -258,6 +267,9 @@ public class SceneControl {
 	        alert.setContentText("Username taken");
 	        alert.showAndWait();
 	    }
+	    
+	    // Writing the data entered into the Librarians.txt file.
+	    
 	    else {
 	        Person librarian = new Person("Librarian", username, password, firstName, lastName, address, cellphone, email, "No");
 
