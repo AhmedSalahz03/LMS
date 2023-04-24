@@ -30,5 +30,6 @@
          </font>
       </Label>
       <Button layoutX="271.0" layoutY="588.0" mnemonicParsing="false" onAction="#signUpLibrarian" text="Sign Up" />
+      <Button layoutX="96.0" layoutY="588.0" mnemonicParsing="false" onAction="#switchToMain" text="Back" />
    </children>
 </AnchorPane>

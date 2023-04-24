@@ -20,6 +20,7 @@ public class Main extends Application {
 	public void start(Stage stage) {
 	   
 		// Load the Sign up/Login page
+		
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 			Scene scene = new Scene(root);
@@ -33,16 +34,21 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		
 		// Create an arraylist that will store Reader objects and another arraylist for Librarian objects.
+		
 		ArrayList<Reader> readers = new ArrayList <>();
 		ArrayList <Librarian> librarians = new ArrayList<>();
 		
 		try {
+			
 			// Reading Readers.txt file to store the data field into a Reader object then adding this object to the 'readers' arraylist.
-	        File file = new File("Readers.txt");
+	        
+			File file = new File("Readers.txt");
 	        Scanner scanner = new Scanner(file);
 
 	        // Skip empty line at the beginning of file
+	        
 	        if (scanner.hasNextLine()) {
 	            scanner.nextLine();
 	        }
@@ -88,8 +94,10 @@ public class Main extends Application {
 	        	if (scanner.hasNextLine()) {
 	        		isBlocked = scanner.nextLine().substring(11).trim();
 	        	}
+	        	
 	        	// Creating a Reader object with data that was stored in the txt file then adding the object to the arraylist that contains all Reader objects.
-	            Reader reader = new Reader(type, username, password, firstName, lastName, address, email, cellphone, isBlocked);
+	            
+	        	Reader reader = new Reader(type, username, password, firstName, lastName, address, email, cellphone, isBlocked);
 	            readers.add(reader);
 	            
 	            System.out.println(reader.getType());
@@ -163,8 +171,10 @@ public class Main extends Application {
 	        	if (scanner.hasNextLine()) {
 	        		isBlocked = scanner.nextLine().substring(11).trim();
 	        	}
+	        	
 	        	// Creating a Librarian object with data that was stored in the txt file then adding the object to the arraylist that contains all Librarian objects.
-	            Librarian librarian = new Librarian(type, username, password, firstName, lastName, address, email, cellphone, isBlocked);
+	            
+	        	Librarian librarian = new Librarian(type, username, password, firstName, lastName, address, email, cellphone, isBlocked);
 	            librarians.add(librarian);
 	            
 	            System.out.println(librarian.getType());

@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneControl">
    <children>
@@ -12,7 +12,11 @@
       <TextField fx:id="logPassword" layoutX="288.0" layoutY="213.0" />
       <Label layoutX="129.0" layoutY="142.0" text="Username" />
       <Label layoutX="131.0" layoutY="218.0" text="Password" />
-      <Label layoutX="272.0" layoutY="53.0" text="Login" />
+      <Label layoutX="260.0" layoutY="53.0" text="Login">
+         <font>
+            <Font size="23.0" />
+         </font></Label>
       <Button layoutX="260.0" layoutY="309.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button layoutX="93.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToMain" text="Back" />
    </children>
 </AnchorPane>

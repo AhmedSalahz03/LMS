@@ -28,5 +28,6 @@
          </font>
       </Label>
       <Button fx:id="signUpbtnReader" layoutX="247.0" layoutY="608.0" mnemonicParsing="false" onAction="#signUpReader" text="Sign Up" />
+      <Button layoutX="98.0" layoutY="608.0" mnemonicParsing="false" onAction="#switchToMain" text="Back" />
    </children>
 </AnchorPane>

@@ -88,6 +88,13 @@ public class SceneControl {
 		stage.show();
 		
 	}
+	public void switchToMain (ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 	public void signUpReader(ActionEvent event) throws IOException {
 		
 		boolean isMatch = false;
@@ -165,7 +172,9 @@ public class SceneControl {
 	        alert.showAndWait();
 	    	
 	    }
+	    
 	    // Writing the data entered into the Readers.txt file.
+	    
 	    else {
 	        Person reader = new Person("Reader", username, password, firstName, lastName, address, cellphone, email, "No");
 
@@ -290,6 +299,8 @@ public class SceneControl {
 	    
 	    boolean isMatch = false;
 	    boolean blocked = false;
+	    
+	    // Reader or Librarian.
 	    String RorL = "un";
 
 	    // First file
@@ -392,12 +403,4 @@ public class SceneControl {
 	        alert.showAndWait();
 	    }
 	}
-
-
-
-	
-
-	
-	
-
 }
