@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextInputDialog;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.lang.String;
 import java.io.File;
 import java.util.Scanner;
 
-public class SceneControl {
+public class SceneControl  {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
@@ -63,6 +64,12 @@ public class SceneControl {
 	TextField logUsername;
 	@FXML
 	TextField logPassword;
+	@FXML
+	TextField nameb;
+	@FXML
+	TextField Authorb;
+	@FXML
+	TextField search_name;
 	
 	public void switchToSignUpReader (ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("signUpReaderPage.fxml"));
@@ -403,4 +410,196 @@ public class SceneControl {
 	        alert.showAndWait();
 	    }
 	}
+	
+
+	
+public void switchToAddBook (ActionEvent event) throws IOException {
+try {	Parent root = FXMLLoader.load(getClass().getResource("Add_book.fxml"));
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}catch (Exception e) {
+	e.getMessage();}
 }
+public void backtohomel (ActionEvent event) throws IOException {
+try {	Parent root = FXMLLoader.load(getClass().getResource("Homel.fxml"));
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}
+catch (Exception e) {
+	e.getMessage();
+}
+
+	
+}
+
+
+
+public void storebook (ActionEvent event) throws IOException {
+	try {
+
+	book b=new book(nameb.getText(),Authorb.getText());
+	  FileWriter writer = new FileWriter("BOOK.txt", true);
+      writer.write("BookName:"+b.getName()+"\n"+"AuthorName:"+b.getAuthor()+"\n"+"\n");
+      writer.close();
+       
+Alert alert=new Alert(AlertType.CONFIRMATION);
+alert.setTitle("saved");
+alert.setContentText("your book saved successfully");
+alert.setHeaderText("saved");
+if(alert.showAndWait().get()==ButtonType.OK) {
+	alert.close();}
+}  catch (FileNotFoundException e) {
+	 e.printStackTrace();  }        
+}
+
+
+public void switchTosearchbook (ActionEvent event) throws IOException {
+	Parent root = FXMLLoader.load(getClass().getResource("serch.fxml"));
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}
+
+public void searchbook (ActionEvent event) throws IOException {
+	ArrayList <book> books2 = new ArrayList<>();
+	int k=0;
+	try {
+		
+		 File file1 = new File("BOOK.txt");
+		Scanner scanner2 = new Scanner(file1);
+		 
+		  if (scanner2.hasNextLine()) {
+		         scanner2.nextLine();
+		     }
+
+	     while (scanner2.hasNextLine()) {
+	     	if (scanner2.hasNextLine()) {
+		            scanner2.nextLine();
+	     	}
+	     	String nbook = "";
+	     	if (scanner2.hasNextLine()) {
+	     		nbook = scanner2.nextLine().substring(9).trim();
+	     	 
+	     	}
+	     	String Abook = "";
+	     	if (scanner2.hasNextLine()) {
+	     		Abook = scanner2.nextLine().substring(11).trim();
+	     	}
+	     	book b1=new book(nbook,Abook);
+	     	books2.add(b1);
+	     }
+	     System.out.println(books2.get(0).getName());
+	     System.out.println(books2.get(1).getName());
+	     
+	     scanner2.close();
+	     for (int i=0;i<books2.size();i++) {
+	     if(books2.get(i).getName().trim().equals(search_name.getText().trim())){
+	    	 k++;
+	    	 Alert alert=new Alert(AlertType.CONFIRMATION);
+	    	 alert.setTitle("search result");
+	    	 alert.setContentText("the book Name:"+books2.get(i).getName()+"\n"+"the book Author:"+books2.get(i).getAuthor());
+	    	 alert.setHeaderText("founded");
+	    	 if(alert.showAndWait().get()==ButtonType.OK) {
+	    	 	alert.close();
+	     }
+	    	 
+	     }
+	     
+	}
+	     if (k==0) {
+	    	 Alert alert=new Alert(AlertType.CONFIRMATION);
+	    	 alert.setTitle("search result");
+	    	 alert.setContentText("the book is not exist");
+	    	 alert.setHeaderText(" not founded");
+	    	 if(alert.showAndWait().get()==ButtonType.OK) {
+	    	 	alert.close();
+	     }
+	    	 
+	     }
+	     
+	     } catch (FileNotFoundException e) {
+		e.printStackTrace();
+	}
+}
+
+public void displayallbook (ActionEvent event) throws IOException {
+	
+	ArrayList <book> books2 = new ArrayList<>();
+	
+		
+		 File file1 = new File("BOOK.txt");
+		Scanner scanner2 = new Scanner(file1);
+		 
+		  if (scanner2.hasNextLine()) {
+		         scanner2.nextLine();
+		     }
+
+	     while (scanner2.hasNextLine()) {
+	     	if (scanner2.hasNextLine()) {
+		            scanner2.nextLine();
+	     	}
+	     	String nbook = "";
+	     	if (scanner2.hasNextLine()) {
+	     		nbook = scanner2.nextLine().substring(9).trim();
+	     	 
+	     	}
+	     	String Abook = "";
+	     	if (scanner2.hasNextLine()) {
+	     		Abook = scanner2.nextLine().substring(11).trim();
+	     	}
+	     	book b1=new book(nbook,Abook);
+	     	books2.add(b1);
+	     }
+	     System.out.println(books2.get(0).getName());
+	     System.out.println(books2.get(1).getName());
+	     
+	     scanner2.close();
+	     String temp="";
+	     for (int i=0;i<books2.size()-1;i++) {
+	    	
+	    	 temp= temp+"the booknumber"+(i+1)+":"+"\n"+books2.get(i).getName()+"\n"+"------"+"\n";
+	     }
+	    	 Alert alert=new Alert(AlertType.CONFIRMATION);
+	    	 alert.setTitle("Dispaly result");
+	    	 alert.setContentText(temp);
+	    	 alert.setHeaderText("ALL books");
+	    	 if(alert.showAndWait().get()==ButtonType.OK) {
+	    	 	alert.close();
+	     }     
+	}
+public void backtohome (ActionEvent event) throws IOException {
+try {	Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}
+catch (Exception e) {
+	e.getMessage();
+}
+
+	
+}
+public void switchTosearchbookreaders (ActionEvent event) throws IOException {
+	Parent root = FXMLLoader.load(getClass().getResource("search_reader.fxml"));
+	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	scene = new Scene(root);
+	stage.setScene(scene);
+	stage.show();
+}
+	
+}
+
+
+	
+
+
+
+	
+	
+

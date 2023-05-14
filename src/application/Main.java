@@ -40,6 +40,7 @@ public class Main extends Application {
 		ArrayList<Reader> readers = new ArrayList <>();
 		ArrayList <Librarian> librarians = new ArrayList<>();
 		
+		
 		try {
 			
 			// Reading Readers.txt file to store the data field into a Reader object then adding this object to the 'readers' arraylist.
@@ -197,6 +198,20 @@ public class Main extends Application {
 		    e.printStackTrace();
 		}
 		
+		
+
+ 
+ 
 		launch(args);
+		
+		
+		
 	}
+	
+	
+	
+	
+	
+	
 }
+

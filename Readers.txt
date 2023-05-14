@@ -20,3 +20,13 @@ Email: cc
 Cellphone: cc
 IsBlocked: No
 
+Type: Reader
+Username: mohamed
+Password: 123456789
+First Name: mohamed
+Last Name: mohamed
+Address: idk
+Email: xv v d
+Cellphone: 01033866909
+IsBlocked: No
+
