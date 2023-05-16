@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneControl">
+   <children>
+      <Text layoutX="36.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entre Name Of Book :" wrappingWidth="114.93673706054688" />
+      <TextField fx:id="search_name" layoutX="181.0" layoutY="21.0" />
+      <Button layoutX="61.0" layoutY="112.0" mnemonicParsing="false" onAction="#searchbook" text="search" />
+      <Button layoutX="403.0" layoutY="112.0" mnemonicParsing="false" onAction="#backtohome" text="Back" />
+   </children>
+</AnchorPane>

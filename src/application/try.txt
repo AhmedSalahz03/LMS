@@ -1,0 +1,87 @@
+public void signUpReader (ActionEvent event) throws IOException {
+		
+		try {
+		String username = usernameTextField.getText();
+		String password = passwordTextField.getText();
+		String firstName = firstNameTextField.getText();
+		String lastName = lastNameTextField.getText();
+		String address = addressTextField.getText();
+		String email = emailTextField.getText();
+		String cellphone = cellphoneTextField.getText();
+		
+		Person reader = new Person (username, password, firstName, lastName, address, cellphone, email, "Reader");
+		
+		FileWriter writer = new FileWriter("Readers.txt", true);
+        writer.write("Type: Reader" + "\n" + "Username: " + username + "\n" + "Password: " + password + "\n" + "First Name: " + firstName + "\n" + "Last Name: " + lastName + "\n" + "Address: " + address + "\n" + "Email: " + email + "\n" + "Cellphone: " + cellphone + "\n" + "\n");
+        writer.close();
+        
+		Parent homeParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
+		Scene homeReader = new Scene (homeParent);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(homeReader);
+		window.show();
+		
+		}
+		catch (NullPointerException e) {
+			System.out.println("Fill out all Fields");	
+		}
+		catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+	}
+	
+	
+	
+	public void login (ActionEvent event) throws IOException{
+		String username = logUsername.getText();
+		String password = logPassword.getText();
+		 try {
+			 File file = new File("Readers.txt");
+		        Scanner scanner = new Scanner(file);
+		        scanner.nextLine(); // Skip empty line at the beginning of file
+
+		        while (scanner.hasNextLine()) {
+		            String line = scanner.nextLine();
+		            if (line.startsWith("Username:")) {
+		                String storedUsername = line.substring(10).trim();
+		                String storedPassword = scanner.nextLine().substring(10).trim();
+		                if (storedUsername.equals(username) && storedPassword.equals(password)) {
+		                    scanner.close();
+		                    Parent homeParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
+		        	        Scene homeReader = new Scene(homeParent);
+		        	        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		        	        window.setScene(homeReader);
+		        	        window.show();
+		                }
+		            }
+		        }
+		        scanner.close();
+		    } catch (FileNotFoundException e) {
+		        e.printStackTrace();
+		    }
+		 	Alert alert = new Alert(AlertType.ERROR);
+	        alert.setTitle("Error");
+	        alert.setHeaderText(null);
+	        alert.setContentText("Wrong Username or Password");
+	        alert.showAndWait();
+		  
+
+		
+		
+	}
+	
+	try (Scanner scanner = new Scanner(new File("Librarians.txt"))) {
+	        scanner.nextLine(); // Skip empty line at the beginning of file
+	        while (scanner.hasNextLine()) {
+	            String line = scanner.nextLine();
+	            if (line.startsWith("Username:")) {
+	                String storedUsername = line.substring(10).trim();
+	                String storedPassword = scanner.nextLine().substring(10).trim();
+	                if (storedUsername.equals(username) && storedPassword.equals(password)) {
+	                    isMatch = true;
+	                    break;
+	                }
+	            }
+	        }
+	    }

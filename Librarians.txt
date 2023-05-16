@@ -1,0 +1,20 @@
+
+
+Type: Reader
+Username: bb
+Password: bb
+First Name: bb
+Last Name: bb
+Address: bb
+Email: bb
+Cellphone: bb
+IsBlocked: bbType: Librarian
+Username: yousef
+Password: 123456
+First Name: yousef
+Last Name: zaki
+Address: cairo
+Email: lvkfdlfd@gmail.com
+Cellphone: 01033866909
+IsBlocked: No
+
