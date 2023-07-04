@@ -1,32 +1,11 @@
 
-
-Type: Reader
-Username: aa
-Password: aa
-First Name: aa
-Last Name: aa
-Address: aa
-Email: aa
-Cellphone: aa
-IsBlocked: aa
-
-Type: Reader
-Username: cc
-Password: cc
-First Name: cc
-Last Name: cc
-Address: cc
-Email: cc
-Cellphone: cc
-IsBlocked: No
-
 Type: Reader
 Username: mohamed
 Password: 123456789
 First Name: mohamed
 Last Name: mohamed
 Address: idk
-Email: xv v d
+Email: n id v
 Cellphone: 01033866909
 IsBlocked: No
 

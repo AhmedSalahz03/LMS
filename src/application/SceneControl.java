@@ -16,6 +16,7 @@ import java.io.FileWriter;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
 
 import java.util.ArrayList;
@@ -70,6 +71,8 @@ public class SceneControl  {
 	TextField Authorb;
 	@FXML
 	TextField search_name;
+	@FXML
+	Label AddUserLabel;
 	
 	public void switchToSignUpReader (ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("signUpReaderPage.fxml"));
@@ -413,7 +416,7 @@ public class SceneControl  {
 	
 
 	
-public void switchToAddBook (ActionEvent event) throws IOException {
+	public void switchToAddBook (ActionEvent event) throws IOException {
 try {	Parent root = FXMLLoader.load(getClass().getResource("Add_book.fxml"));
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
@@ -422,7 +425,7 @@ try {	Parent root = FXMLLoader.load(getClass().getResource("Add_book.fxml"));
 }catch (Exception e) {
 	e.getMessage();}
 }
-public void backtohomel (ActionEvent event) throws IOException {
+	public void backtohomel (ActionEvent event) throws IOException {
 try {	Parent root = FXMLLoader.load(getClass().getResource("Homel.fxml"));
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
@@ -438,7 +441,7 @@ catch (Exception e) {
 
 
 
-public void storebook (ActionEvent event) throws IOException {
+	public void storebook (ActionEvent event) throws IOException {
 	try {
 
 	book b=new book(nameb.getText(),Authorb.getText());
@@ -457,7 +460,7 @@ if(alert.showAndWait().get()==ButtonType.OK) {
 }
 
 
-public void switchTosearchbook (ActionEvent event) throws IOException {
+	public void switchTosearchbook (ActionEvent event) throws IOException {
 	Parent root = FXMLLoader.load(getClass().getResource("serch.fxml"));
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
@@ -465,7 +468,7 @@ public void switchTosearchbook (ActionEvent event) throws IOException {
 	stage.show();
 }
 
-public void searchbook (ActionEvent event) throws IOException {
+	public void searchbook (ActionEvent event) throws IOException {
 	ArrayList <book> books2 = new ArrayList<>();
 	int k=0;
 	try {
@@ -527,7 +530,7 @@ public void searchbook (ActionEvent event) throws IOException {
 	}
 }
 
-public void displayallbook (ActionEvent event) throws IOException {
+	public void displayallbook (ActionEvent event) throws IOException {
 	
 	ArrayList <book> books2 = new ArrayList<>();
 	
@@ -572,8 +575,8 @@ public void displayallbook (ActionEvent event) throws IOException {
 	    	 	alert.close();
 	     }     
 	}
-public void backtohome (ActionEvent event) throws IOException {
-try {	Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+	public void backtohome (ActionEvent event) throws IOException {
+		try {	Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -585,13 +588,39 @@ catch (Exception e) {
 
 	
 }
-public void switchTosearchbookreaders (ActionEvent event) throws IOException {
+	
+	public void switchTosearchbookreaders (ActionEvent event) throws IOException {
 	Parent root = FXMLLoader.load(getClass().getResource("search_reader.fxml"));
 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
 	stage.show();
 }
+       
+   	
+   	public void switchtoAddUser(ActionEvent event) throws IOException {
+   			Parent root = FXMLLoader.load(getClass().getResource("AddUser.fxml"));
+			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
+   	
+   	public void switchToRemoveuser (ActionEvent event) throws IOException {
+   		Parent root = FXMLLoader.load(getClass().getResource("RemoveUser.fxml"));
+   		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+   		scene = new Scene(root);
+   		stage.setScene(scene);
+   		stage.show();
+   	}
+   	
+   	public void switchToHomeL (ActionEvent event) throws IOException {
+   		Parent root = FXMLLoader.load(getClass().getResource("HomeL.fxml"));
+   		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+   		scene = new Scene(root);
+   		stage.setScene(scene);
+   		stage.show();
+   	}
 	
 }
 

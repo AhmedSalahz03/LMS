@@ -7,15 +7,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneControl">
    <children>
-      <Button layoutX="27.0" layoutY="123.0" mnemonicParsing="false" onAction="#switchToAddBook" text="Add Book" />
-      <Button layoutX="146.0" layoutY="123.0" mnemonicParsing="false" text="Remove book" />
-      <Button layoutX="274.0" layoutY="123.0" mnemonicParsing="false" onAction="#switchTosearchbook" text="search for books" />
+      <Button layoutX="198.0" layoutY="72.0" mnemonicParsing="false" onAction="#switchToAddBook" prefHeight="28.0" prefWidth="157.0" text="Add Book" />
+      <Button layoutX="198.0" layoutY="186.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="157.0" text="Remove book" />
+      <Button layoutX="198.0" layoutY="129.0" mnemonicParsing="false" onAction="#switchTosearchbook" prefHeight="28.0" prefWidth="157.0" text="search for books" />
       <Text layoutX="39.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How Can I help you ? " wrappingWidth="263.7366943359375">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <Button layoutX="453.0" layoutY="288.0" mnemonicParsing="false" onAction="#switchToLogin" text="log out" />
-      <Button layoutX="401.0" layoutY="123.0" mnemonicParsing="false" onAction="#displayallbook" text="Display all Books" />
+      <Button layoutX="500.0" layoutY="341.0" mnemonicParsing="false" onAction="#switchToLogin" text="log out" />
+      <Button layoutX="198.0" layoutY="238.0" mnemonicParsing="false" onAction="#displayallbook" prefHeight="25.0" prefWidth="157.0" text="Display all Books" />
+      <Button layoutX="198.0" layoutY="288.0" mnemonicParsing="false" onAction="#switchtoAddUser" prefHeight="28.0" prefWidth="157.0" text="Add User" />
+      <Button layoutX="198.0" layoutY="340.0" mnemonicParsing="false" onAction="#switchToRemoveuser" prefHeight="28.0" prefWidth="157.0" text="Remove User" />
    </children>
 </AnchorPane>
